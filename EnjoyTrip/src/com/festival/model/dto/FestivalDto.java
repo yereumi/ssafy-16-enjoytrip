@@ -5,6 +5,14 @@ public class FestivalDto {
 	private String place;
 	private String region;
 	
+	public FestivalDto() {};
+	
+	public FestivalDto(String festivalName, String place, String region) {
+		this.festivalName = festivalName;
+		this.place = place;
+		this.region = region;
+	}
+	
 	public String getRegion() {
 		return region;
 	}

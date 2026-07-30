@@ -19,7 +19,7 @@ public class FestivalDaoImpl implements FestivalDao {
     public void loadData() {
         FestivalCsvReader reader = new FestivalCsvReader();
 
-        festivals = reader.read("data/festival.csv");
+        festivals = reader.read("res/2026년_지역축제_개최_계획_현황(공개용).csv");
     }
 
     @Override

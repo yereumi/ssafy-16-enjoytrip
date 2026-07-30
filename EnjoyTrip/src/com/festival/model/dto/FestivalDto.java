@@ -3,7 +3,16 @@ package com.festival.model.dto;
 public class FestivalDto {
 	private String festivalName;
 	private String place;
+	private String region;
 	
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
+	}
+
 	public String getFestivalName() {
 		return festivalName;
 	}

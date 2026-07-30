@@ -2,6 +2,7 @@ package com.ssafy.trip.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -36,7 +37,8 @@ public class TouristDestinationSAXHandler extends DefaultHandler {
 			// complete code #04
 			// tripDto 객체를 생성(이미지 정보 세팅)하고 trips List에 추가하세요.
 			tripDto = new TripDto(num ++);
-			tripDto.setImg(uri);
+			Random ran = new Random();
+			tripDto.setImg("image0" + ran.nextInt(9) +".jpg");
 			trips.add(tripDto);
 			
 			

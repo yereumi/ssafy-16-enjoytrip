@@ -1,8 +1,8 @@
-package com.festival.model.service;
+package com.ssafy.festival.model.service;
 
 import java.util.List;
 
-import com.festival.model.dto.FestivalDto;
+import com.ssafy.festival.model.dto.FestivalDto;
 import com.ssafy.trip.model.dto.TripDto;
 import com.ssafy.trip.model.dto.TripSearchDto;
 

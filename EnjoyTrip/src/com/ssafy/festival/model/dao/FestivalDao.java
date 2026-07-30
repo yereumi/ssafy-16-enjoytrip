@@ -2,7 +2,7 @@ package com.ssafy.festival.model.dao;
 
 import java.util.*;
 
-import com.festival.model.dto.FestivalDto;
+import com.ssafy.festival.model.dto.FestivalDto;
 
 public interface FestivalDao {
 	

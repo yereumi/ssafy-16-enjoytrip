@@ -3,7 +3,7 @@ package com.ssafy.festival.model.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.festival.model.dto.FestivalDto;
+import com.ssafy.festival.model.dto.FestivalDto;
 import com.ssafy.festival.util.FestivalCsvReader;
 
 public class FestivalDaoImpl implements FestivalDao {

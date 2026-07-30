@@ -13,9 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import com.festival.model.dto.FestivalDto;
-import com.festival.model.service.FestivalService;
-import com.festival.model.service.FestivalServiceImpl;
+import com.ssafy.festival.model.dto.FestivalDto;
+import com.ssafy.festival.model.service.FestivalService;
+import com.ssafy.festival.model.service.FestivalServiceImpl;
 
 public class FestivalInfoView {
 
@@ -71,7 +71,8 @@ public class FestivalInfoView {
 
         regionComboBox = new JComboBox<>(regions);
         searchButton = new JButton("조회");
-
+        searchButton.addActionListener(e -> searchFestivals());
+        
         topPanel.add(new JLabel("지역"));
         topPanel.add(regionComboBox);
         topPanel.add(searchButton);
@@ -84,7 +85,7 @@ public class FestivalInfoView {
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(scrollPane, BorderLayout.CENTER);
 
-        searchButton.addActionListener(e -> searchFestivals());
+        
     }
 
     private void searchFestivals() {

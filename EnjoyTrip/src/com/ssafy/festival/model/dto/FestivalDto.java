@@ -1,4 +1,4 @@
-package com.festival.model.dto;
+package com.ssafy.festival.model.dto;
 
 public class FestivalDto {
 	private String festivalName;

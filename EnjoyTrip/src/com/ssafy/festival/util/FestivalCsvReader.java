@@ -1,10 +1,11 @@
 package com.ssafy.festival.util;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-import com.festival.model.dto.FestivalDto;
+import com.ssafy.festival.model.dto.FestivalDto;
 
 
 public class FestivalCsvReader {
@@ -17,7 +18,15 @@ public class FestivalCsvReader {
                         new FileInputStream(filePath),
                         StandardCharsets.UTF_8))) {
 
+        	for (int i = 0; i < 4; i++) {
+        	    br.readLine();
+        	}
+
             String headerLine = br.readLine();
+            
+            br.readLine();
+            br.readLine();
+            br.readLine();
 
             if (headerLine == null) {
                 return festivals;
@@ -27,8 +36,9 @@ public class FestivalCsvReader {
 
             int regionIndex = findColumnIndex(headers, "광역자치단체명");
             int festivalIndex = findColumnIndex(headers, "축제명");
-            int placeIndex = findColumnIndex(headers, "개최장소");
+            int placeIndex = findColumnIndex(headers, "개최 장소");
 
+            System.out.println(headers);
             if (regionIndex == -1 || festivalIndex == -1 || placeIndex == -1) {
                 throw new IllegalArgumentException(
                         "CSV에서 광역자치단체명, 축제명 또는 개최장소 열을 찾을 수 없습니다.");

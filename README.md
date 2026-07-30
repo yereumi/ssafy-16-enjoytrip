@@ -23,8 +23,12 @@
 
 ## 3) 관광지 정보 상세 조회 (F103)
 > 관광지 목록 화면에 원하는 관광지 클릭 시, 왼쪽 화면에 상세 정보 표시
-
 <img width="1166" height="822" alt="스크린샷 2026-07-30 124559" src="https://github.com/user-attachments/assets/b4554a5d-83b7-4447-a71f-f7964dba05b8" />
+
+## 4) 지역 축제 조회 (F104)
+> 관광지 상세 정보 조회 시 '지역 축제 보기'를 클릭하여 국내 지역 목록을 표시
+<img width="686" height="493" alt="{1E6C56DB-80CD-4B17-9559-B36657413E15}" src="https://github.com/user-attachments/assets/5ec8962f-24be-4ab3-a107-ac6cc07a4c08" />
+
 
 # 구현 소스 코드
 ## TripInfoView
@@ -94,3 +98,4 @@ public void endElement(String uri, String localName, String qName) {
 // 전국관광지정보표준데이터.xml을 loading하도록 처리하세요.
 loadData();
 ```
+

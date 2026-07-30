@@ -25,3 +25,72 @@
 > 관광지 목록 화면에 원하는 관광지 클릭 시, 왼쪽 화면에 상세 정보 표시
 
 <img width="1166" height="822" alt="스크린샷 2026-07-30 124559" src="https://github.com/user-attachments/assets/b4554a5d-83b7-4447-a71f-f7964dba05b8" />
+
+# 구현 소스 코드
+## TripInfoView
+### 01
+```
+searchBt.addActionListener(e -> searchTrips());
+```
+
+## TripServiceImpl
+### 02
+```
+return tripDao.search(num);
+```
+
+## TripDaoImpl
+### 03
+```
+for (TripDto tripDto : tripInfo) {
+			if (tripDto.getNum() == num) {
+				return tripDto;
+			}
+		}
+		
+		return null;
+```
+
+## TouristDestinationSAXHandler
+### 04
+```
+tripDto = new TripDto(num ++);
+			Random ran = new Random();
+			tripDto.setImg("image0" + ran.nextInt(9) +".jpg");
+			trips.add(tripDto);
+```
+
+### 05-07
+```
+@Override
+	public void endElement(String uri, String localName, String qName) {
+		if (qName.equals("관광지명")) {
+			// complete code #05
+			tripDto.setTouristDestination(temp);
+		} else if (qName.equals("소재지도로명주소")) {
+			tripDto.setStreetAddress(temp);
+		} else if (qName.equals("소재지지번주소")) {
+			tripDto.setLotAddress(temp);
+		} else if (qName.equals("위도")) {
+			if (temp.length() != 0)
+				tripDto.setLat(Double.parseDouble(temp));
+		} else if (qName.equals("경도")) {
+			// complete code #06
+			if (temp.length() != 0)
+				tripDto.setLng(Double.parseDouble(temp));
+		} else if (qName.equals("관광지소개")) {
+			tripDto.setInfo(temp);
+		} else if (qName.equals("관리기관전화번호")) {
+			// complete code #07
+			tripDto.setTel(temp);
+		}
+	}
+```
+
+## TouristDestinationSAXParser
+### 08
+```
+// complete code #08
+// 전국관광지정보표준데이터.xml을 loading하도록 처리하세요.
+loadData();
+```

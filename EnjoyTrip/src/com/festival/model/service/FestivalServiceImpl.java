@@ -17,7 +17,7 @@ public class FestivalServiceImpl implements FestivalService {
 	}
 	
 	@Override
-	public List<FestivalDto> searchAll(String region) {
+	public List<FestivalDto> searchByRegion(String region) {
 		return festivalDao.searchByRegion(region);
 	}
 	

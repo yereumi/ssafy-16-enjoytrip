@@ -8,6 +8,6 @@ import com.ssafy.trip.model.dto.TripSearchDto;
 
 public interface FestivalService {
 	
-	public List<FestivalDto> searchAll(String region);
+	public List<FestivalDto> searchByRegion(String region);
 	
 }

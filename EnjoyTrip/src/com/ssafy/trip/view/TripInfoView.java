@@ -44,7 +44,8 @@ public class TripInfoView {
 	private JComboBox<String> findC;
 	private JTextField wordTf;
 	private JButton searchBt;
-
+	private JButton festivalBt; // 지역축제버튼
+	
 	/** 조회 내용 표시할 table */
 	private DefaultTableModel tripModel;
 	private JTable tripTable;
@@ -147,7 +148,8 @@ public class TripInfoView {
 		findC = new JComboBox<String>(item);
 		wordTf = new JTextField();
 		searchBt = new JButton("검색");
-
+		festivalBt = new JButton("지역축제");
+		
 		rightTop2.add(findC);
 		rightTop2.add(wordTf);
 		rightTop2.add(searchBt);
@@ -190,7 +192,7 @@ public class TripInfoView {
 		// searchBt.addActionListener( /* 여기 */ );
 		
 		searchBt.addActionListener(e -> searchTrips());
-
+		festivalBt.addActionListener(e -> new FestivalInfoView());
 		// 참조코드 시작 - 위 코드를 완성 후 삭제 또는 comment 처리하세요.
 //		ActionListener buttonHandler = new ActionListener() {
 //			@Override

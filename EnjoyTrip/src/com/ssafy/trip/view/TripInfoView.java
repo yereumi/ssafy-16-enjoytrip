@@ -23,6 +23,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+import com.ssafy.festival.view.FestivalInfoView;
 import com.ssafy.trip.model.dto.TripDto;
 import com.ssafy.trip.model.dto.TripSearchDto;
 import com.ssafy.trip.model.service.TripService;
@@ -120,6 +121,9 @@ public class TripInfoView {
 		JPanel left = new JPanel(new BorderLayout());
 		JPanel leftCenter = new JPanel(new BorderLayout(0, 10));
 		JPanel leftR = new JPanel(new GridLayout(10, 2));
+		festivalBt = new JButton("지역 축제 보기");
+
+		festivalBt.addActionListener(e -> new FestivalInfoView());
 		leftR.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 
 		String[] info = { "", "", "관광지명", "도로명주소", "지번주소", "위도", "경도", "전화번호", "관광지정보", "" };
@@ -133,7 +137,8 @@ public class TripInfoView {
 			leftR.add(tripInfoL[i]);
 		}
 		imgL = new JLabel();
-		leftCenter.add(imgL, "Center");
+		leftCenter.add(imgL, "North");
+		leftCenter.add(festivalBt, "Center");
 		leftCenter.add(leftR, "South");
 
 		left.add(new JLabel("관광지 정보", JLabel.CENTER), "North");
@@ -148,11 +153,11 @@ public class TripInfoView {
 		findC = new JComboBox<String>(item);
 		wordTf = new JTextField();
 		searchBt = new JButton("검색");
-		festivalBt = new JButton("지역축제");
 		
 		rightTop2.add(findC);
 		rightTop2.add(wordTf);
 		rightTop2.add(searchBt);
+		
 
 		rightTop.add(new Label(""));
 		rightTop.add(new Label(""));
@@ -192,7 +197,6 @@ public class TripInfoView {
 		// searchBt.addActionListener( /* 여기 */ );
 		
 		searchBt.addActionListener(e -> searchTrips());
-		festivalBt.addActionListener(e -> new FestivalInfoView());
 		// 참조코드 시작 - 위 코드를 완성 후 삭제 또는 comment 처리하세요.
 //		ActionListener buttonHandler = new ActionListener() {
 //			@Override
